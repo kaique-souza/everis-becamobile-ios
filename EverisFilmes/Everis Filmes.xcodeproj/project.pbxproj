@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B18C3AB248D15820078CC89 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3AA248D15820078CC89 /* DetalhesViewController.swift */; };
+		6B18C3AD248DC7AA0078CC89 /* DetalahesFilme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3AC248DC7AA0078CC89 /* DetalahesFilme.swift */; };
+		6B18C3AF248DC8000078CC89 /* Genero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3AE248DC8000078CC89 /* Genero.swift */; };
+		6B18C3B1248DCF0B0078CC89 /* DetalhesFilmesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3B0248DCF0B0078CC89 /* DetalhesFilmesAPI.swift */; };
+		6B18C3B3248DDC710078CC89 /* DetalhesFilmeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3B2248DDC710078CC89 /* DetalhesFilmeCollectionViewCell.swift */; };
+		6B18C3B5248DE4850078CC89 /* DetalheFilmesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3B4248DE4850078CC89 /* DetalheFilmesDAO.swift */; };
+		6B18C3BA248E68BD0078CC89 /* 32526b5b86d16707b4fc030c01fa3ff2804c.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6B18C3B9248E68BD0078CC89 /* 32526b5b86d16707b4fc030c01fa3ff2804c.ico */; };
+		6B18C3BE248E80330078CC89 /* FilmesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B18C3BD248E80330078CC89 /* FilmesDecodable.swift */; };
+		6B84E2FF248972000006571E /* FilmesControllerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84E2FE248972000006571E /* FilmesControllerCollectionViewCell.swift */; };
+		6B84E30124898C1E0006571E /* FilmesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84E30024898C1E0006571E /* FilmesDAO.swift */; };
+		6BDFAB6C24892ECD00BFA7B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDFAB6B24892ECD00BFA7B9 /* AppDelegate.swift */; };
+		6BDFAB6E24892ECD00BFA7B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDFAB6D24892ECD00BFA7B9 /* ViewController.swift */; };
+		6BDFAB7124892ECD00BFA7B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDFAB6F24892ECD00BFA7B9 /* Main.storyboard */; };
+		6BDFAB7324892ED000BFA7B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BDFAB7224892ED000BFA7B9 /* Assets.xcassets */; };
+		6BDFAB7624892ED000BFA7B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDFAB7424892ED000BFA7B9 /* LaunchScreen.storyboard */; };
+		6BDFAB872489509200BFA7B9 /* FilmesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDFAB862489509200BFA7B9 /* FilmesAPI.swift */; };
+		917BA4FEEB51740ACA98B5DC /* Pods_Everis_Filmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB50E8F499077C4CC4464DC /* Pods_Everis_Filmes.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		33EBCC06E23661AF3687A810 /* Pods-Everis Filmes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Everis Filmes.debug.xcconfig"; path = "Target Support Files/Pods-Everis Filmes/Pods-Everis Filmes.debug.xcconfig"; sourceTree = "<group>"; };
+		3F84DCEC0881458FD85B9B65 /* Pods-Everis Filmes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Everis Filmes.release.xcconfig"; path = "Target Support Files/Pods-Everis Filmes/Pods-Everis Filmes.release.xcconfig"; sourceTree = "<group>"; };
+		4CB50E8F499077C4CC4464DC /* Pods_Everis_Filmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Everis_Filmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B18C3AA248D15820078CC89 /* DetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
+		6B18C3AC248DC7AA0078CC89 /* DetalahesFilme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalahesFilme.swift; sourceTree = "<group>"; };
+		6B18C3AE248DC8000078CC89 /* Genero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genero.swift; sourceTree = "<group>"; };
+		6B18C3B0248DCF0B0078CC89 /* DetalhesFilmesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmesAPI.swift; sourceTree = "<group>"; };
+		6B18C3B2248DDC710078CC89 /* DetalhesFilmeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B18C3B4248DE4850078CC89 /* DetalheFilmesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheFilmesDAO.swift; sourceTree = "<group>"; };
+		6B18C3B9248E68BD0078CC89 /* 32526b5b86d16707b4fc030c01fa3ff2804c.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = 32526b5b86d16707b4fc030c01fa3ff2804c.ico; sourceTree = "<group>"; };
+		6B18C3BD248E80330078CC89 /* FilmesDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDecodable.swift; sourceTree = "<group>"; };
+		6B84E2FE248972000006571E /* FilmesControllerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesControllerCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B84E30024898C1E0006571E /* FilmesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDAO.swift; sourceTree = "<group>"; };
+		6BDFAB6824892ECD00BFA7B9 /* Everis Filmes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Everis Filmes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BDFAB6B24892ECD00BFA7B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6BDFAB6D24892ECD00BFA7B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6BDFAB7024892ECD00BFA7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6BDFAB7224892ED000BFA7B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6BDFAB7524892ED000BFA7B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6BDFAB7724892ED000BFA7B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BDFAB862489509200BFA7B9 /* FilmesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesAPI.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6BDFAB6524892ECD00BFA7B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				917BA4FEEB51740ACA98B5DC /* Pods_Everis_Filmes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18ED32A53E4F2D0DB03CE257 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33EBCC06E23661AF3687A810 /* Pods-Everis Filmes.debug.xcconfig */,
+				3F84DCEC0881458FD85B9B65 /* Pods-Everis Filmes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4F92BB50EFE82110631EB2C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CB50E8F499077C4CC4464DC /* Pods_Everis_Filmes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B18C3A5248D02740078CC89 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6BDFAB812489495F00BFA7B9 /* Models */,
+				6BDFAB7D2489385100BFA7B9 /* Controllers */,
+				6BDFAB7E248948AA00BFA7B9 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6B18C3A6248D02A40078CC89 /* Detalhes */ = {
+			isa = PBXGroup;
+			children = (
+				6B18C3A7248D02C10078CC89 /* Models */,
+				6B18C3A9248D02DC0078CC89 /* Controllers */,
+				6B18C3A8248D02CC0078CC89 /* Views */,
+			);
+			path = Detalhes;
+			sourceTree = "<group>";
+		};
+		6B18C3A7248D02C10078CC89 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B18C3AC248DC7AA0078CC89 /* DetalahesFilme.swift */,
+				6B18C3AE248DC8000078CC89 /* Genero.swift */,
+				6B18C3B0248DCF0B0078CC89 /* DetalhesFilmesAPI.swift */,
+				6B18C3B4248DE4850078CC89 /* DetalheFilmesDAO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B18C3A8248D02CC0078CC89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B18C3B2248DDC710078CC89 /* DetalhesFilmeCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6B18C3A9248D02DC0078CC89 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B18C3AA248D15820078CC89 /* DetalhesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6B18C3B6248E67C40078CC89 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6B18C3B9248E68BD0078CC89 /* 32526b5b86d16707b4fc030c01fa3ff2804c.ico */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6BDFAB5F24892ECD00BFA7B9 = {
+			isa = PBXGroup;
+			children = (
+				6BDFAB6A24892ECD00BFA7B9 /* Everis Filmes */,
+				6BDFAB6924892ECD00BFA7B9 /* Products */,
+				18ED32A53E4F2D0DB03CE257 /* Pods */,
+				4F92BB50EFE82110631EB2C6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6BDFAB6924892ECD00BFA7B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BDFAB6824892ECD00BFA7B9 /* Everis Filmes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6BDFAB6A24892ECD00BFA7B9 /* Everis Filmes */ = {
+			isa = PBXGroup;
+			children = (
+				6BDFAB6B24892ECD00BFA7B9 /* AppDelegate.swift */,
+				6B18C3A5248D02740078CC89 /* Home */,
+				6B18C3A6248D02A40078CC89 /* Detalhes */,
+				6B18C3B6248E67C40078CC89 /* Assets */,
+				6BDFAB6F24892ECD00BFA7B9 /* Main.storyboard */,
+				6BDFAB7224892ED000BFA7B9 /* Assets.xcassets */,
+				6BDFAB7424892ED000BFA7B9 /* LaunchScreen.storyboard */,
+				6BDFAB7724892ED000BFA7B9 /* Info.plist */,
+			);
+			path = "Everis Filmes";
+			sourceTree = "<group>";
+		};
+		6BDFAB7D2489385100BFA7B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6BDFAB6D24892ECD00BFA7B9 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6BDFAB7E248948AA00BFA7B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B84E2FE248972000006571E /* FilmesControllerCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6BDFAB812489495F00BFA7B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6BDFAB862489509200BFA7B9 /* FilmesAPI.swift */,
+				6B84E30024898C1E0006571E /* FilmesDAO.swift */,
+				6B18C3BD248E80330078CC89 /* FilmesDecodable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6BDFAB6724892ECD00BFA7B9 /* Everis Filmes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BDFAB7A24892ED000BFA7B9 /* Build configuration list for PBXNativeTarget "Everis Filmes" */;
+			buildPhases = (
+				537B0247F1125328F99B84B7 /* [CP] Check Pods Manifest.lock */,
+				6BDFAB6424892ECD00BFA7B9 /* Sources */,
+				6BDFAB6524892ECD00BFA7B9 /* Frameworks */,
+				6BDFAB6624892ECD00BFA7B9 /* Resources */,
+				7D6D02A47AE16679F4EB7362 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Everis Filmes";
+			productName = "Everis Filmes";
+			productReference = 6BDFAB6824892ECD00BFA7B9 /* Everis Filmes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6BDFAB6024892ECD00BFA7B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Kaique Santos Souza";
+				TargetAttributes = {
+					6BDFAB6724892ECD00BFA7B9 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 6BDFAB6324892ECD00BFA7B9 /* Build configuration list for PBXProject "Everis Filmes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6BDFAB5F24892ECD00BFA7B9;
+			productRefGroup = 6BDFAB6924892ECD00BFA7B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6BDFAB6724892ECD00BFA7B9 /* Everis Filmes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6BDFAB6624892ECD00BFA7B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B18C3BA248E68BD0078CC89 /* 32526b5b86d16707b4fc030c01fa3ff2804c.ico in Resources */,
+				6BDFAB7624892ED000BFA7B9 /* LaunchScreen.storyboard in Resources */,
+				6BDFAB7324892ED000BFA7B9 /* Assets.xcassets in Resources */,
+				6BDFAB7124892ECD00BFA7B9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		537B0247F1125328F99B84B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Everis Filmes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D6D02A47AE16679F4EB7362 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Everis Filmes/Pods-Everis Filmes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Everis Filmes/Pods-Everis Filmes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Everis Filmes/Pods-Everis Filmes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6BDFAB6424892ECD00BFA7B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B18C3AB248D15820078CC89 /* DetalhesViewController.swift in Sources */,
+				6B18C3AF248DC8000078CC89 /* Genero.swift in Sources */,
+				6BDFAB872489509200BFA7B9 /* FilmesAPI.swift in Sources */,
+				6BDFAB6E24892ECD00BFA7B9 /* ViewController.swift in Sources */,
+				6B84E30124898C1E0006571E /* FilmesDAO.swift in Sources */,
+				6BDFAB6C24892ECD00BFA7B9 /* AppDelegate.swift in Sources */,
+				6B18C3B5248DE4850078CC89 /* DetalheFilmesDAO.swift in Sources */,
+				6B84E2FF248972000006571E /* FilmesControllerCollectionViewCell.swift in Sources */,
+				6B18C3B1248DCF0B0078CC89 /* DetalhesFilmesAPI.swift in Sources */,
+				6B18C3AD248DC7AA0078CC89 /* DetalahesFilme.swift in Sources */,
+				6B18C3BE248E80330078CC89 /* FilmesDecodable.swift in Sources */,
+				6B18C3B3248DDC710078CC89 /* DetalhesFilmeCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6BDFAB6F24892ECD00BFA7B9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BDFAB7024892ECD00BFA7B9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6BDFAB7424892ED000BFA7B9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BDFAB7524892ED000BFA7B9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6BDFAB7824892ED000BFA7B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6BDFAB7924892ED000BFA7B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6BDFAB7B24892ED000BFA7B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33EBCC06E23661AF3687A810 /* Pods-Everis Filmes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Everis Filmes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "everis-viagens.Everis-Filmes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6BDFAB7C24892ED000BFA7B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F84DCEC0881458FD85B9B65 /* Pods-Everis Filmes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Everis Filmes/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "everis-viagens.Everis-Filmes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6BDFAB6324892ECD00BFA7B9 /* Build configuration list for PBXProject "Everis Filmes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BDFAB7824892ED000BFA7B9 /* Debug */,
+				6BDFAB7924892ED000BFA7B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BDFAB7A24892ED000BFA7B9 /* Build configuration list for PBXNativeTarget "Everis Filmes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BDFAB7B24892ED000BFA7B9 /* Debug */,
+				6BDFAB7C24892ED000BFA7B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6BDFAB6024892ECD00BFA7B9 /* Project object */;
+}
