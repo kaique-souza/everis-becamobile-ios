@@ -23,21 +23,25 @@ class Filmes: NSObject, Decodable{
         case posterPath = "poster_path"
         case popularity
         case overview
+        case release_date
+        case adult
     }
     
         let id: Int?
         let voteCount: Int?
         let voteAverage: Double?
-        let title: String?
+        var title: String?
         let originalLanguage: String?
         let originalTitle: String?
         let genreIDS: [Int]?
         let backdropPath: String?
-        let overview: String?
+        var overview: String?
         let posterPath: String?
         let popularity: Double?
+        let release_date: String?
+        let adult: Bool?
     
-    init(posterPath: String, adult: Bool, overView: String, genreIds: Array<Int>, id: Int, originalTitle: String, originalLinguage: String, title: String, backDropPath: String, popularity: Double, voteCount: Int, video: Bool, voteAverage: Double){
+    init(posterPath: String, overView: String, genreIds: Array<Int>, id: Int, originalTitle: String, originalLinguage: String, title: String, backDropPath: String, popularity: Double, voteCount: Int, voteAverage: Double, release_date: String, adult: Bool){
         
         self.posterPath = posterPath
         self.overview = overView
@@ -50,5 +54,7 @@ class Filmes: NSObject, Decodable{
         self.popularity = popularity
         self.voteCount = voteCount
         self.voteAverage = voteAverage
+        self.release_date = release_date
+        self.adult = adult
     }
 }

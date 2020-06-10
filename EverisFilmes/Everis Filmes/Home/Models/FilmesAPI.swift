@@ -33,7 +33,7 @@ class FilmesAPI: NSObject {
     
     //MARK- Metodos
     func consultaFilmes(completion: @escaping(Array<Filmes>)-> Void){
-        guard let urlListaFilmes = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(ChaveAPI)") else {return}
+        guard let urlListaFilmes = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=\(ChaveAPI)&language=pt-br") else {return}
         
         Alamofire.request(urlListaFilmes, method: .get).responseJSON { (resposta)in
             switch resposta.result{

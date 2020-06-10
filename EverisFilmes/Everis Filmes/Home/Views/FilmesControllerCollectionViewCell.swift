@@ -15,7 +15,6 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
     //MARK - Outlets
     @IBOutlet weak var imagePoster: UIImageView!
     @IBOutlet weak var labelPopularity: UILabel!
-    
     @IBOutlet weak var labelVotos: UILabel!
     //MARK - Metodos
     
@@ -26,9 +25,10 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
          let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
         guard let imageUrl = URL(string: urlImagem) else {return}
         self.imagePoster.af_setImage(withURL: imageUrl)
-        
         guard let popularity = (listaFilmes.popularity)?.description else {return}
         labelPopularity.text =  popularity
+        labelVotos.text = (listaFilmes.voteCount)?.description
+        
         
     }
     

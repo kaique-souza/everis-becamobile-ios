@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DetalhesFilmeCollectionViewCell: UICollectionViewCell {
+    
 
+ 
 }

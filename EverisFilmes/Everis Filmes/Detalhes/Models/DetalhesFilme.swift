@@ -7,37 +7,38 @@
 //
 
 import UIKit
+import Foundation
 
-class DetalahesFilme: NSObject {
-    
-    let backdropPath: String?
-    let genres: [Genero]?
-    let id: Int?
-    let originalLanguage, overview: String?
-    let popularity: Double?
-    let posterPath: String?
-    let title: String?
-    let voteAverage: Double
-    let voteCount: Int
+class DetalhesFilme: NSObject, Decodable {
     
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
-        case overview, popularity
+        case overview
+        case popularity
         case posterPath = "poster_path"
         case title
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+        case id
     }
     
-    init(backDropPath: String, genres: [Genero], overView: String, posterPath: String, title: String, id: Int, originalLiiguage: String, popularity: Double, voteAverage: Double, voteCount: Int){
+    let backdropPath: String?
+    let id: Int?
+    let overview: String?
+    let popularity: Double?
+    let posterPath: String?
+    let title: String?
+    let voteAverage: Double?
+    let voteCount: Int?
+    
+    init(backDropPath: String, overView: String, posterPath: String, title: String, id: Int, popularity: Double, voteAverage: Double, voteCount: Int){
         
         self.backdropPath = backDropPath
-        self.genres =  genres
+        //self.genres =  genres
         self.overview = overView
         self.posterPath = posterPath
         self.title = title
         self.id = id
-        self.originalLanguage = originalLiiguage
         self.popularity = popularity
         self.voteAverage = voteAverage
         self.voteCount = voteCount

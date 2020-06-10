@@ -27,8 +27,8 @@ class FilmesDAO: NSObject {
             guard let voteCountJson = listaFilmes["vote_count"] as? Int else {return[] }
             guard let voteAverageJson = listaFilmes["vote_average"] as? Double else {return [] }
             
-            let filmes =  Filmes(posterPath: posterPathJson, adult: false, overView: overViewJson, genreIds: [], id: idJson, originalTitle: "", originalLinguage: "", title: "", backDropPath: backDropPathJson, popularity: popularityJson, voteCount: voteCountJson, video: false, voteAverage: voteAverageJson)
-            listaFilmesRecuperados.append(filmes)
+//            let filmes =  Filmes(posterPath: posterPathJson, overView: overViewJson, genreIds: [], id: idJson, originalTitle: "", originalLinguage: "", title: "", backDropPath: backDropPathJson, popularity: popularityJson, voteCount: voteCountJson, video: false, voteAverage: voteAverageJson)
+//            listaFilmesRecuperados.append(filmes)
         }
         
         return listaFilmesRecuperados

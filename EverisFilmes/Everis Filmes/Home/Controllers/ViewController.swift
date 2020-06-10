@@ -53,11 +53,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-        let filme = listaPopulada[indexPath.item]
+        let Detalhefilme = listaPopulada[indexPath.item]
+        //guard let idFilme = Detalhefilme.id else {return}
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "DetalheFilmes") as! DetalhesViewController
-        controller.filmeSelecionado = filme
-        DetalhesFilmesAPI().consultaDetalheFilmes(idFilme: 339095)
+        controller.listaDetalhesFilme = Detalhefilme
         self.present(controller, animated: true, completion: nil)
     }
 }
