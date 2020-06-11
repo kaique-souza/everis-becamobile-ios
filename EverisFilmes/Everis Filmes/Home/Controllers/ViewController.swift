@@ -35,7 +35,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
    
-    
+    //MARK - Metodos
     func setaLista (lista: Array<Filmes>){
         listaPopulada = lista
     }

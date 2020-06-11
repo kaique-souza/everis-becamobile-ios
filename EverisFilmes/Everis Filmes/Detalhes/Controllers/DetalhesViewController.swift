@@ -58,6 +58,8 @@ class DetalhesViewController: UIViewController{
         }
     }
     
+    
+    //Resolvi adicionar so o primeiro genero que retorna na lista pois iria ficar muito poluida a tela
     func formataLabelGenero(_ lista: Filmes)-> String{
         guard let idsGenero = lista.genreIDS else {return ""}
         guard let id = idsGenero.first else {return ""}
@@ -67,7 +69,6 @@ class DetalhesViewController: UIViewController{
                 return genero
             }
         }
-//
         return ""
     }
     
@@ -84,10 +85,6 @@ class DetalhesViewController: UIViewController{
 
             self.formatLabelAdult(listaFilmes: lista)
 
-            guard let votos = lista.voteCount else {return}
-            
-            guard let mediavotos = lista.voteAverage else {return}
-
             guard let data = lista.release_date else {return}
             let dataFormatada = self.formatData(data)
             labelDataLanacamento.text = dataFormatada
@@ -96,9 +93,8 @@ class DetalhesViewController: UIViewController{
             let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
             guard let imageUrl = URL(string: urlImagem) else {return}
             self.DetalhesFilmeImage.af_setImage(withURL: imageUrl)
-        
+
             labelGenero.text = formataLabelGenero(lista)
-            
         }
          
     }

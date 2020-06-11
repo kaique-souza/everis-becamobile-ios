@@ -19,8 +19,6 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
     //MARK - Metodos
     
     func formataCollection(_ listaFilmes: Filmes){
-        //labelTitle.text = listaFilmes.titutlo
-       
         guard let imagem = listaFilmes.posterPath else {return}
          let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
         guard let imageUrl = URL(string: urlImagem) else {return}
@@ -28,8 +26,7 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
         guard let popularity = (listaFilmes.popularity)?.description else {return}
         labelPopularity.text =  popularity
         labelVotos.text = (listaFilmes.voteCount)?.description
-        
-        
+    
     }
     
 

@@ -17,6 +17,7 @@ class FilmesAPI: NSObject {
   
     var listaRecuperada: Array<Filmes> =  []
     
+    //MARK- Metodos
     func converteDicinario(json: [[String:Any]])-> Data?{
         return try? JSONSerialization.data(withJSONObject: json, options: [])
     }
@@ -31,7 +32,6 @@ class FilmesAPI: NSObject {
         }
     }
     
-    //MARK- Metodos
     func consultaFilmes(completion: @escaping(Array<Filmes>)-> Void){
         guard let urlListaFilmes = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=\(ChaveAPI)&language=pt-br") else {return}
         

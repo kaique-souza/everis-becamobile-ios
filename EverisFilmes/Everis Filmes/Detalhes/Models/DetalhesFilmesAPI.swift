@@ -39,10 +39,6 @@ class DetalhesFilmesAPI: NSObject {
                 guard let data =  self.converteDicinario(json: dicionario) else {return}
                 guard let listaGenero =  self.decodificar(jsonData: data) else {return}
                 completion(listaGenero)
-//                for lista in listaGenero{
-//                    print(lista.id)
-//                    print(lista.name)
-//                }
                 break
             case .failure:
                 print(resposta.error!)
