@@ -58,18 +58,27 @@ class DetalhesViewController: UIViewController{
         }
     }
     
-    
+    func removeIdTrailler(_ listaID: [Int])-> [Int]{
+        for id in listaID{
+            if id != 53{
+                let ids: [Int] = [id]
+                return ids
+            }
+        }
+        return [0]
+    }
     //Resolvi adicionar so o primeiro genero que retorna na lista pois iria ficar muito poluida a tela
     func formataLabelGenero(_ lista: Filmes)-> String{
         guard let idsGenero = lista.genreIDS else {return ""}
-        guard let id = idsGenero.first else {return ""}
+        let listaIDS = removeIdTrailler(idsGenero)
+        guard let id = listaIDS.first else {return ""}
         for lista in listaGeneros{
             if id == lista.id{
                 guard let genero = lista.name else {return ""}
                 return genero
             }
         }
-        return ""
+        return "Sem classificação"
     }
     
     
