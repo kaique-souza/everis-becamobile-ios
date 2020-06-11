@@ -30,11 +30,6 @@ class DetalhesViewController: UIViewController{
         self.formataButton()
     }
     
-    
-    @objc func aumentaScroll(notification: Notification){
-        self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width, height: self.scrollView.frame.height + 450)
-    }
-    
     //MARK - Metodos
     func formatData(_ data: String)-> String{
         let dataEntrada = data
