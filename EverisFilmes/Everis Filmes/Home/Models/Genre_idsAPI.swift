@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class DetalhesFilmesAPI: NSObject {
+class Genre_idsAPI: NSObject {
     
     //MARk - Atributos
     let chaveApiDetalhes = "b9976ef2334d455f8d61c7f6c2f54d29"

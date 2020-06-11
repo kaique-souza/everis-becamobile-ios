@@ -27,7 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.colecaoFilmes.reloadData()
         }
         
-        DetalhesFilmesAPI().consultaDetalheFilmes { (lista) in
+        Genre_idsAPI().consultaDetalheFilmes { (lista) in
             self.setaListaGenero(lista: lista)
         }
         self.colecaoFilmes.dataSource = self

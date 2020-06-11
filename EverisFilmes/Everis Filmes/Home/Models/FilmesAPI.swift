@@ -50,8 +50,4 @@ class FilmesAPI: NSObject {
             }
         }.resume()
      }
-    
-
-    
-    
 }
