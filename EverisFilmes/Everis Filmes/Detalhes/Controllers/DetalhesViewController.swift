@@ -10,25 +10,24 @@ import UIKit
 
 class DetalhesViewController: UIViewController{
 
-    
-
-   
-    @IBOutlet weak var buttonVoltar: UIButton!
+    //MARK - Atributos
+    var listaGeneros: Array<Genre_ids> = []
     var listaDetalhesFilme: Filmes? = nil
+    
+    //MARK - Outlet
+    @IBOutlet weak var buttonVoltar: UIButton!
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var DetalhesFilmeImage: UIImageView!
     @IBOutlet weak var labelSinopse: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var labelDataLanacamento: UILabel!
     @IBOutlet weak var labelClassificao: UILabel!
+    @IBOutlet weak var labelGenero: UILabel!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         populaCampos()
         self.formataButton()
-        NotificationCenter.default.addObserver(self, selector: #selector (aumentaScroll(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     
@@ -36,6 +35,7 @@ class DetalhesViewController: UIViewController{
         self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width, height: self.scrollView.frame.height + 450)
     }
     
+    //MARK - Metodos
     func formatData(_ data: String)-> String{
         let dataEntrada = data
         let dateFormatterSaida = DateFormatter()
@@ -58,16 +58,19 @@ class DetalhesViewController: UIViewController{
         }
     }
     
-    func heightForView(text:String, font:UIFont, width:CGFloat) {
-       let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = font
-        label.text = text
-        label.sizeToFit()
-        //labelSinopse.heightAnchor(label.frame.height)
+    func formataLabelGenero(_ lista: Filmes)-> String{
+        guard let idsGenero = lista.genreIDS else {return ""}
+        guard let id = idsGenero.first else {return ""}
+        for lista in listaGeneros{
+            if id == lista.id{
+                guard let genero = lista.name else {return ""}
+                return genero
+            }
+        }
+//
+        return ""
     }
-
+    
     
     @IBOutlet var Collction: [UIView]!
     func populaCampos (){
@@ -77,33 +80,32 @@ class DetalhesViewController: UIViewController{
             self.labelTitulo.text = titulo
 
             guard let sinopse = lista.overview else {return}
-            
-            
             self.labelSinopse.text = sinopse
-            
+
             self.formatLabelAdult(listaFilmes: lista)
-         
+
             guard let votos = lista.voteCount else {return}
             
             guard let mediavotos = lista.voteAverage else {return}
-            
+
             guard let data = lista.release_date else {return}
             let dataFormatada = self.formatData(data)
             labelDataLanacamento.text = dataFormatada
-            
+
             guard let imagem = lista.backdropPath else {return}
             let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
             guard let imageUrl = URL(string: urlImagem) else {return}
             self.DetalhesFilmeImage.af_setImage(withURL: imageUrl)
+        
+            labelGenero.text = formataLabelGenero(lista)
+            
         }
          
     }
 
     func formataButton (){
-        self.buttonVoltar.layer.cornerRadius = self.buttonVoltar.frame.width / 4
-        self.buttonVoltar.layer.borderWidth = 1
-        self.buttonVoltar.layer.borderColor = UIColor.lightGray.cgColor
-        
+//        self.buttonVoltar.layer.cornerRadius = self.buttonVoltar.frame.width / 4
+//        self.buttonVoltar.layer.borderWidth = 1
         self.buttonVoltar.layer.borderColor = UIColor.black.cgColor
     }
     

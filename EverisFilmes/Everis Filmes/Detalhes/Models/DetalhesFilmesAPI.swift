@@ -14,13 +14,13 @@ class DetalhesFilmesAPI: NSObject {
     //MARk - Atributos
     let chaveApiDetalhes = "b9976ef2334d455f8d61c7f6c2f54d29"
     
-    func converteDicinarioDetalhes(json: [[String:Any]])-> Data?{
+    func converteDicinario(json: [[String:Any]])-> Data?{
         return try? JSONSerialization.data(withJSONObject: json, options: [])
     }
     
-    func decodificarDetahes(jsonData: Data)-> [DetalhesFilme]?{
+    func decodificar(jsonData: Data)-> [Genre_ids]?{
         do{
-            let listaPopulada = try JSONDecoder().decode([DetalhesFilme].self, from: jsonData)
+            let listaPopulada = try JSONDecoder().decode([Genre_ids].self, from: jsonData)
             return listaPopulada
         }catch{
             print(error.localizedDescription)
@@ -28,27 +28,26 @@ class DetalhesFilmesAPI: NSObject {
         }
     }
     
-    func consultaDetalheFilmes (idFilme: Int, completion: @escaping(Array<DetalhesFilme>)-> Void){
+    func consultaDetalheFilmes (completion: @escaping(Array<Genre_ids>)-> Void){
         
-        guard let urlRequest = URL(string: "https://api.themoviedb.org/3/movie/\(idFilme)?api_key=\(chaveApiDetalhes)&language=pt-BR") else {return}
+        guard let urlRequest = URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=\(chaveApiDetalhes)&language=pt-br") else {return}
         Alamofire.request(urlRequest, method: .get).responseJSON { (resposta) in
             switch resposta.result{
-                case .success:
-                    guard let json = resposta.result.value as? [[String: Any]] else {return}
-                    //guard let dicionario = json["production_countries"] as? Array<Dictionary<String, Any>> else {return}
-                    guard let dados = self.converteDicinarioDetalhes(json: json) else {return}
-                    guard let listaPopulada = self.decodificarDetahes(jsonData: dados) else {return}
-                    
-//                    guard let json = resposta.result.value as? Dictionary<String, Any> else {return}
-//                    guard let dicionario = json["production_countries"] as? Array<Dictionary<String, Any>> else {return}
-//                    guard let dados = self.converteDicinarioDetalhes(json: dicionario) else {return}
-//                    guard let listaPopulada = self.decodificarDetahes(jsonData: dados) else {return}
-                    completion(listaPopulada)
+            case .success:
+                guard let json = resposta.result.value as? [String: Any] else {return}
+                guard let dicionario = json["genres"] as? Array<Dictionary<String, Any>> else {return}
+                guard let data =  self.converteDicinario(json: dicionario) else {return}
+                guard let listaGenero =  self.decodificar(jsonData: data) else {return}
+                completion(listaGenero)
+//                for lista in listaGenero{
+//                    print(lista.id)
+//                    print(lista.name)
+//                }
                 break
-                case .failure:
-                    print(resposta.error!)
+            case .failure:
+                print(resposta.error!)
                 break
             }
-        }.resume()
+            }.resume()
     }
 }

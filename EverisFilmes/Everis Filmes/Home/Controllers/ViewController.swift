@@ -13,19 +13,22 @@ import Alamofire
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
     
   
-    
+    //MARK - Atributos
+    var listaGenerosIds:Array<Genre_ids> = []
+    var listaPopulada: Array<Filmes> = []
     //MARK - Outlets
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     
-    var listaPopulada: Array<Filmes> = []
     
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         FilmesAPI().consultaFilmes { (lista) in
             self.setaLista(lista: lista)
             self.colecaoFilmes.reloadData()
+        }
+        
+        DetalhesFilmesAPI().consultaDetalheFilmes { (lista) in
+            self.setaListaGenero(lista: lista)
         }
         self.colecaoFilmes.dataSource = self
         self.colecaoFilmes.delegate = self
@@ -35,6 +38,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func setaLista (lista: Array<Filmes>){
         listaPopulada = lista
+    }
+    
+    func setaListaGenero (lista: Array<Genre_ids>){
+        listaGenerosIds = lista
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,12 +59,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+
         let Detalhefilme = listaPopulada[indexPath.item]
-        //guard let idFilme = Detalhefilme.id else {return}
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "DetalheFilmes") as! DetalhesViewController
         controller.listaDetalhesFilme = Detalhefilme
+        controller.listaGeneros = listaGenerosIds
         self.present(controller, animated: true, completion: nil)
     }
 }
