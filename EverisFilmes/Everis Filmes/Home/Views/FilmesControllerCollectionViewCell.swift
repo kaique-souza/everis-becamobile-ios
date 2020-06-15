@@ -26,7 +26,6 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
         guard let popularity = (listaFilmes.popularity)?.description else {return}
         labelPopularity.text =  popularity
         labelVotos.text = (listaFilmes.voteCount)?.description
-    
     }
     
 

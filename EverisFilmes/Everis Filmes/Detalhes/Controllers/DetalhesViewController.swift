@@ -13,8 +13,9 @@ class DetalhesViewController: UIViewController{
     //MARK - Atributos
     var listaGeneros: Array<Genre_ids> = []
     var listaDetalhesFilme: Filmes? = nil
+    let url = "https://image.tmdb.org/t/p/original"
     
-    //MARK - Outlet
+    //MARK - Outlets
     @IBOutlet weak var buttonVoltar: UIButton!
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var DetalhesFilmeImage: UIImageView!
@@ -30,53 +31,7 @@ class DetalhesViewController: UIViewController{
         self.formataButton()
     }
     
-    //MARK - Metodos
-    func formatData(_ data: String)-> String{
-        let dataEntrada = data
-        let dateFormatterSaida = DateFormatter()
-        dateFormatterSaida.dateFormat = "yyyy-MM-dd"
-        let date = dateFormatterSaida.date(from: dataEntrada)
-        dateFormatterSaida.dateFormat = "dd/MM/yyyy"
-        let dataSaida = dateFormatterSaida.string(from: date!)
-        return dataSaida
-    }
-    
-    func formatLabelAdult(listaFilmes: Filmes){
-        if let adulto = listaFilmes.adult {
-            if adulto{
-                labelClassificao.text = "Adulto"
-                labelClassificao.textColor = UIColor.red
-            }else{
-                labelClassificao.text = "Livre"
-                labelClassificao.textColor = UIColor(displayP3Red: 0.0/255, green: 128.0/255, blue: 0.0/255, alpha: 1.0)
-            }
-        }
-    }
-    
-    func removeIdTrailler(_ listaID: [Int])-> [Int]{
-        for id in listaID{
-            if id != 53{
-                let ids: [Int] = [id]
-                return ids
-            }
-        }
-        return [0]
-    }
-    //Resolvi adicionar so o primeiro genero que retorna na lista pois iria ficar muito poluida a tela
-    func formataLabelGenero(_ lista: Filmes)-> String{
-        guard let idsGenero = lista.genreIDS else {return ""}
-        let listaIDS = removeIdTrailler(idsGenero)
-        guard let id = listaIDS.first else {return ""}
-        for lista in listaGeneros{
-            if id == lista.id{
-                guard let genero = lista.name else {return ""}
-                return genero
-            }
-        }
-        return "Sem classificação"
-    }
-    
-    
+    //MARK- Metodos
     @IBOutlet var Collction: [UIView]!
     func populaCampos (){
         if let lista = listaDetalhesFilme{
@@ -87,25 +42,23 @@ class DetalhesViewController: UIViewController{
             guard let sinopse = lista.overview else {return}
             self.labelSinopse.text = sinopse
 
-            self.formatLabelAdult(listaFilmes: lista)
+            labelClassificao = DetalhesViewModel().formatLabelAdult(listaFilmes: lista, labelAdult: labelClassificao!)
 
             guard let data = lista.release_date else {return}
-            let dataFormatada = self.formatData(data)
+            let dataFormatada = DetalhesViewModel().formatData(data)
             labelDataLanacamento.text = dataFormatada
 
             guard let imagem = lista.backdropPath else {return}
-            let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
+            
+            let urlImagem = "\(url)\(imagem)"
             guard let imageUrl = URL(string: urlImagem) else {return}
             self.DetalhesFilmeImage.af_setImage(withURL: imageUrl)
 
-            labelGenero.text = formataLabelGenero(lista)
+            labelGenero.text = DetalhesViewModel().formataLabelGenero(lista, listaGeneros: listaGeneros)
         }
-         
     }
 
     func formataButton (){
-//        self.buttonVoltar.layer.cornerRadius = self.buttonVoltar.frame.width / 4
-//        self.buttonVoltar.layer.borderWidth = 1
         self.buttonVoltar.layer.borderColor = UIColor.black.cgColor
     }
     

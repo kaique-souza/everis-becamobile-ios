@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
     
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
   
     //MARK - Atributos
@@ -26,7 +26,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.setaLista(lista: lista)
             self.colecaoFilmes.reloadData()
         }
-        
         Genre_idsAPI().consultaDetalheFilmes { (lista) in
             self.setaListaGenero(lista: lista)
         }
