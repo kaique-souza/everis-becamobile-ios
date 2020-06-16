@@ -18,7 +18,18 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var labelVotos: UILabel!
     //MARK - Metodos
     
+    func acessibilityComponents(){
+        //Imagem
+        imagePoster.isAccessibilityElement = true
+        imagePoster.accessibilityHint = "Clique para ver os detalhes do filme"
+        imagePoster.accessibilityTraits = .button
+        
+        labelPopularity.accessibilityHint = "Popula"
+    
+    }
+
     func formataCollection(_ listaFilmes: Filmes){
+        self.acessibilityComponents()
         guard let imagem = listaFilmes.posterPath else {return}
          let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
         guard let imageUrl = URL(string: urlImagem) else {return}

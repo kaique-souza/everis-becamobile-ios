@@ -59,3 +59,5 @@ class DetalhesViewModel: NSObject {
         return "Sem classificação"
     }
 }
+
+

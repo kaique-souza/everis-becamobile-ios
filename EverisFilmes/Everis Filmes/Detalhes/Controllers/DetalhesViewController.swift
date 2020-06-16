@@ -24,6 +24,7 @@ class DetalhesViewController: UIViewController{
     @IBOutlet weak var labelDataLanacamento: UILabel!
     @IBOutlet weak var labelClassificao: UILabel!
     @IBOutlet weak var labelGenero: UILabel!
+    @IBOutlet weak var LabelDetalhes: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,8 @@ class DetalhesViewController: UIViewController{
             self.DetalhesFilmeImage.af_setImage(withURL: imageUrl)
 
             labelGenero.text = DetalhesViewModel().formataLabelGenero(lista, listaGeneros: listaGeneros)
+            
+            self.format()
         }
     }
 
@@ -64,5 +67,20 @@ class DetalhesViewController: UIViewController{
     
     @IBAction func buttonVoltar(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DetalhesViewController{
+    func format (){
+        buttonVoltar.accessibilityHint = "Voltar para lista de filmes"
+        LabelDetalhes.accessibilityHint = "Cabeçalho detalhes"
+        LabelDetalhes.accessibilityTraits = .header
+        
+        guard let titulo = labelTitulo.text else {return}
+        labelTitulo.accessibilityLabel = "Titulo: \(titulo)"
+        
+        guard let Textosinope = labelSinopse.text else {return}
+        labelSinopse.accessibilityLabel =  "Sinopse: \(Textosinope))"
+        
     }
 }

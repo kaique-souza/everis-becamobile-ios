@@ -18,6 +18,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var listaPopulada: Array<Filmes> = []
     //MARK - Outlets
     @IBOutlet weak var colecaoFilmes: UICollectionView!
+    @IBOutlet weak var labelTitulo: UILabel!
     
     
     override func viewDidLoad() {
@@ -58,7 +59,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         let Detalhefilme = listaPopulada[indexPath.item]
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "DetalheFilmes") as! DetalhesViewController
