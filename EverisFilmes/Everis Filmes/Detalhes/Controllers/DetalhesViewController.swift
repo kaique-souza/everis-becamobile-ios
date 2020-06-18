@@ -42,7 +42,9 @@ class DetalhesViewController: UIViewController{
 
             guard let sinopse = lista.overview else {return}
             self.labelSinopse.text = sinopse
-
+            labelSinopse.numberOfLines = 0
+            labelSinopse.sizeToFit()
+           
             labelClassificao = DetalhesViewModel().formatLabelAdult(listaFilmes: lista, labelAdult: labelClassificao!)
 
             guard let data = lista.release_date else {return}
@@ -81,6 +83,5 @@ extension DetalhesViewController{
         
         guard let Textosinope = labelSinopse.text else {return}
         labelSinopse.accessibilityLabel =  "Sinopse: \(Textosinope))"
-        
     }
 }

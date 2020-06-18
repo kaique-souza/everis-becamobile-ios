@@ -14,7 +14,6 @@ class FilmesAPI: NSObject {
     
     //MARK- Atributos
     var ChaveAPI = "b9976ef2334d455f8d61c7f6c2f54d29"
-  
     var listaRecuperada: Array<Filmes> =  []
     
     //MARK- Metodos

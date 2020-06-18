@@ -1,0 +1,6 @@
+framework module Pods_Everis_Filmes {
+  umbrella header "Pods-Everis Filmes-umbrella.h"
+
+  export *
+  module * { export * }
+}
