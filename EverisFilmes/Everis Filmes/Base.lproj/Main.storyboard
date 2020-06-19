@@ -40,8 +40,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kd0-fI-kWW">
                                         <rect key="frame" x="0.0" y="53" width="375" height="594"/>
                                         <subviews>
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Pesquisar" translatesAutoresizingMaskIntoConstraints="NO" id="WU0-lC-LfI">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="skt-7O-ORm">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="594"/>
+                                                <rect key="frame" x="0.0" y="56" width="375" height="538"/>
                                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6m2-qy-80S">
                                                     <size key="itemSize" width="372" height="279"/>
@@ -103,7 +108,10 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="skt-7O-ORm" secondAttribute="trailing" id="7OK-XI-XcM"/>
                                             <constraint firstAttribute="bottom" secondItem="skt-7O-ORm" secondAttribute="bottom" id="HoA-P9-naA"/>
-                                            <constraint firstItem="skt-7O-ORm" firstAttribute="top" secondItem="Kd0-fI-kWW" secondAttribute="top" id="qaO-RS-G5y"/>
+                                            <constraint firstItem="WU0-lC-LfI" firstAttribute="leading" secondItem="Kd0-fI-kWW" secondAttribute="leading" id="NXk-hU-AZa"/>
+                                            <constraint firstItem="WU0-lC-LfI" firstAttribute="top" secondItem="Kd0-fI-kWW" secondAttribute="top" id="fU5-CJ-5YS"/>
+                                            <constraint firstItem="skt-7O-ORm" firstAttribute="top" secondItem="WU0-lC-LfI" secondAttribute="bottom" id="iXF-J3-f6M"/>
+                                            <constraint firstAttribute="trailing" secondItem="WU0-lC-LfI" secondAttribute="trailing" id="ocw-4a-fNQ"/>
                                             <constraint firstItem="skt-7O-ORm" firstAttribute="leading" secondItem="Kd0-fI-kWW" secondAttribute="leading" id="uXa-Fw-6pH"/>
                                         </constraints>
                                     </stackView>
@@ -133,6 +141,7 @@
                     <connections>
                         <outlet property="colecaoFilmes" destination="skt-7O-ORm" id="YeX-KD-4Xx"/>
                         <outlet property="labelTitulo" destination="YXe-Gm-2Sx" id="Jf6-le-T2T"/>
+                        <outlet property="searchBar" destination="WU0-lC-LfI" id="Oyl-5J-mPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,16 +10,18 @@ import UIKit
 import Alamofire
 
     
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate{
     
   
     //MARK - Atributos
     var listaGenerosIds:Array<Genre_ids> = []
+    var listaComTodosFilmes: Array<Filmes> = []
     var listaPopulada: Array<Filmes> = []
+    
     //MARK - Outlets
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     @IBOutlet weak var labelTitulo: UILabel!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +29,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.setaLista(lista: lista)
             self.colecaoFilmes.reloadData()
         }
+        
         Genre_idsAPI().consultaDetalheFilmes { (lista) in
             self.setaListaGenero(lista: lista)
         }
         self.colecaoFilmes.dataSource = self
         self.colecaoFilmes.delegate = self
+        self.searchBar.delegate = self
     }
     
-   
     //MARK - Metodos
     func setaLista (lista: Array<Filmes>){
         listaPopulada = lista
+        listaComTodosFilmes = lista
     }
     
     func setaListaGenero (lista: Array<Genre_ids>){
@@ -65,6 +69,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         controller.listaDetalhesFilme = Detalhefilme
         controller.listaGeneros = listaGenerosIds
         self.present(controller, animated: true, completion: nil)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != ""{
+            let listaFiltrada = listaPopulada.filter{$0.title!.contains(searchText)}
+            listaPopulada = listaFiltrada
+            self.colecaoFilmes.reloadData()
+        }else{
+            listaPopulada = listaComTodosFilmes
+            self.colecaoFilmes.reloadData()
+        }
     }
 }
 
