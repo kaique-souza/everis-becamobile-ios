@@ -14,7 +14,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
   
     //MARK - Atributos
-    var listaGenerosIds:Array<Genre_ids> = []
     var listaComTodosFilmes: Array<Filmes> = []
     var listaPopulada: Array<Filmes> = []
     
@@ -29,10 +28,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             self.setaLista(lista: lista)
             self.colecaoFilmes.reloadData()
         }
-        
-        Genre_idsAPI().consultaDetalheFilmes { (lista) in
-            self.setaListaGenero(lista: lista)
-        }
         self.colecaoFilmes.dataSource = self
         self.colecaoFilmes.delegate = self
         self.searchBar.delegate = self
@@ -42,10 +37,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func setaLista (lista: Array<Filmes>){
         listaPopulada = lista
         listaComTodosFilmes = lista
-    }
-    
-    func setaListaGenero (lista: Array<Genre_ids>){
-        listaGenerosIds = lista
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,10 +55,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let Detalhefilme = listaPopulada[indexPath.item]
+        guard let id = Detalhefilme.id else {return}
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "DetalheFilmes") as! DetalhesViewController
-        controller.listaDetalhesFilme = Detalhefilme
-        controller.listaGeneros = listaGenerosIds
+        controller.idDetalheFilme = id
         self.present(controller, animated: true, completion: nil)
     }
     

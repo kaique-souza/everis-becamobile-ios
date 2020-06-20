@@ -11,9 +11,11 @@ import UIKit
 class DetalhesViewController: UIViewController{
 
     //MARK - Atributos
-    var listaGeneros: Array<Genre_ids> = []
-    var listaDetalhesFilme: Filmes? = nil
-    let url = "https://image.tmdb.org/t/p/original"
+//    var listaGeneros: Array<Genre_ids> = [] ------ Lista da API de generos que estava consultando antes
+//    var listaDetalhesFilme: Filmes? = nil  ---------  lista da pagina principal que eu estava usando antes
+    
+    var DetalheDoFilme: DetalhesFilmes?
+    var idDetalheFilme: Int = 0
     
     //MARK - Outlets
     @IBOutlet weak var buttonVoltar: UIButton!
@@ -28,36 +30,45 @@ class DetalhesViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        populaCampos()
+        ConsultaDetalhesAPI().consultaApiDetalhesFilmes(idDetalheFilme) { (Detalhe) in
+            self.setDetalheFilme(Detalhe)
+            self.populaCampos()
+        }
         self.formataButton()
     }
     
     //MARK- Metodos
+    func setDetalheFilme(_ detalheFilme: DetalhesFilmes){
+        DetalheDoFilme =  detalheFilme
+    }
+    
     @IBOutlet var Collction: [UIView]!
     func populaCampos (){
-        if let lista = listaDetalhesFilme{
+        if let Detalhe = DetalheDoFilme{
             
-            guard let titulo = lista.title else {return}
+            guard let titulo = Detalhe.title else {return}
             self.labelTitulo.text = titulo
 
-            guard let sinopse = lista.overview else {return}
+            guard let sinopse = Detalhe.overview else {return}
             self.labelSinopse.text = sinopse
             labelSinopse.numberOfLines = 0
             labelSinopse.sizeToFit()
            
-            labelClassificao = DetalhesViewModel().formatLabelAdult(listaFilmes: lista, labelAdult: labelClassificao!)
+            labelClassificao = DetalhesViewModel().formatLabelAdult(Detalhe, labelAdult: labelClassificao!)
 
-            guard let data = lista.release_date else {return}
+            guard let data = Detalhe.releaseDate else {return}
             let dataFormatada = DetalhesViewModel().formatData(data)
             labelDataLanacamento.text = dataFormatada
 
-            guard let imagem = lista.backdropPath else {return}
+            guard let imagem = Detalhe.backdropPath else {return}
             
-            let urlImagem = "\(url)\(imagem)"
+            let urlImagem = "https://image.tmdb.org/t/p/original\(imagem)"
             guard let imageUrl = URL(string: urlImagem) else {return}
             self.DetalhesFilmeImage.af_setImage(withURL: imageUrl)
-
-            labelGenero.text = DetalhesViewModel().formataLabelGenero(lista, listaGeneros: listaGeneros)
+            
+            labelGenero.text = DetalhesViewModel().formataLabelGenero(Detalhe)
+            labelGenero.numberOfLines = 0
+            labelGenero.sizeToFit()
             
             self.format()
         }

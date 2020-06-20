@@ -23,7 +23,6 @@ class FilmesControllerCollectionViewCell: UICollectionViewCell{
         imagePoster.isAccessibilityElement = true
         imagePoster.accessibilityHint = "Clique para ver os detalhes do filme"
         imagePoster.accessibilityTraits = .button
-        
         labelPopularity.accessibilityHint = "Popula"
     
     }

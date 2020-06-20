@@ -21,8 +21,8 @@ class DetalhesViewModel: NSObject {
         return dataSaida
     }
     
-    func formatLabelAdult(listaFilmes: Filmes, labelAdult: UILabel) -> UILabel{
-        if let adulto = listaFilmes.adult {
+    func formatLabelAdult(_ detalhe: DetalhesFilmes, labelAdult: UILabel) -> UILabel{
+        if let adulto = detalhe.adult {
             if adulto{
                 labelAdult.text = "Adulto"
                 labelAdult.textColor = UIColor.red
@@ -36,27 +36,16 @@ class DetalhesViewModel: NSObject {
         return labelAdult
     }
     
-    func removeIdTrailler(_ listaID: [Int])-> [Int]{
-        for id in listaID{
-            if id != 53{
-                let ids: [Int] = [id]
-                return ids
-            }
-        }
-        return [0]
-    }
     //Resolvi adicionar so o primeiro genero que retorna na lista pois iria ficar muito poluida a tela
-    func formataLabelGenero(_ lista: Filmes, listaGeneros: Array<Genre_ids>)-> String{
-        guard let idsGenero = lista.genreIDS else {return ""}
-        let listaIDS = removeIdTrailler(idsGenero)
-        guard let id = listaIDS.first else {return ""}
-        for lista in listaGeneros{
-            if id == lista.id{
-                guard let genero = lista.name else {return ""}
-                return genero
+    func formataLabelGenero(_ detalhe: DetalhesFilmes)-> String{
+        var GeneroSaida: String = ""
+        if let listageneros = detalhe.genres{
+            for genero in listageneros{
+                guard let name = genero.name else {return "Sem classificação"}
+               GeneroSaida +=  name + ", "
             }
         }
-        return "Sem classificação"
+        return GeneroSaida
     }
 }
 
