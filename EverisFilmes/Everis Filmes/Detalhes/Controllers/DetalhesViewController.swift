@@ -67,8 +67,6 @@ class DetalhesViewController: UIViewController{
             self.DetalhesFilmeImage.af_setImage(withURL: imageUrl)
             
             labelGenero.text = DetalhesViewModel().formataLabelGenero(Detalhe)
-            labelGenero.numberOfLines = 0
-            labelGenero.sizeToFit()
             
             self.format()
         }

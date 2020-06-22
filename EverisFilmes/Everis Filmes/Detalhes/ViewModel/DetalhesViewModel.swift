@@ -39,13 +39,16 @@ class DetalhesViewModel: NSObject {
     //Resolvi adicionar so o primeiro genero que retorna na lista pois iria ficar muito poluida a tela
     func formataLabelGenero(_ detalhe: DetalhesFilmes)-> String{
         var GeneroSaida: String = ""
-        if let listageneros = detalhe.genres{
-            for genero in listageneros{
-                guard let name = genero.name else {return "Sem classificação"}
-               GeneroSaida +=  name + ", "
+        guard let listageneros = detalhe.genres else {return "Sem classificação"}
+        for genero in listageneros{
+            if let name = genero.name {
+                GeneroSaida = name
+                //GeneroSaida +=  name + ", "
+                return GeneroSaida
             }
         }
-        return GeneroSaida
+        
+        return "Sem classificação"
     }
 }
 

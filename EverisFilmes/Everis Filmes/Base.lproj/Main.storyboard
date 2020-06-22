@@ -241,7 +241,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Di-kf-EDA">
-                                                                        <rect key="frame" x="79" y="1" width="268" height="27"/>
+                                                                        <rect key="frame" x="79" y="0.0" width="196" height="27"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -292,6 +292,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="086-De-rWn" firstAttribute="top" secondItem="9L9-q4-nY7" secondAttribute="bottom" constant="2" id="1Jp-nx-OC4"/>
+                                                    <constraint firstItem="086-De-rWn" firstAttribute="leading" secondItem="fjb-9E-4re" secondAttribute="leading" id="6mv-1u-43e"/>
+                                                    <constraint firstItem="oXo-2B-XQM" firstAttribute="top" secondItem="086-De-rWn" secondAttribute="bottom" constant="2" id="IdA-as-cVC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="086-De-rWn" secondAttribute="trailing" id="YnW-3v-mns"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
