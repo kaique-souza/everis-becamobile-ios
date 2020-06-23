@@ -41,7 +41,7 @@ class DetalhesViewModel: NSObject {
         var GeneroSaida: String = ""
         guard let listageneros = detalhe.genres else {return "Sem classificação"}
         for genero in listageneros{
-            if let name = genero.name {
+            if let name = genero.name, genero.id != 53{
                 GeneroSaida = name
                 //GeneroSaida +=  name + ", "
                 return GeneroSaida

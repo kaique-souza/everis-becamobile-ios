@@ -21,21 +21,35 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var colecaoFilmes: UICollectionView!
     @IBOutlet weak var labelTitulo: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var viewButtonMais: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         FilmesAPI().consultaFilmes { (lista) in
             self.setaLista(lista: lista)
             self.colecaoFilmes.reloadData()
+            self.montaLista()
         }
+        self.viewButtonMais.layer.cornerRadius = viewButtonMais.frame.width / 2
+        self.viewButtonMais.layer.masksToBounds = true
         self.colecaoFilmes.dataSource = self
         self.colecaoFilmes.delegate = self
         self.searchBar.delegate = self
     }
     
     //MARK - Metodos
+    func montaLista(){
+        var quantidade = 0
+        listaComTodosFilmes.forEach { (item) in
+            if !listaPopulada.contains(item) && quantidade <= 5 {
+                listaPopulada.append(item)
+                quantidade += 1
+            }
+        }
+    }
+    
     func setaLista (lista: Array<Filmes>){
-        listaPopulada = lista
+        //listaPopulada = lista
         listaComTodosFilmes = lista
     }
     
@@ -68,9 +82,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             listaPopulada = listaFiltrada
             self.colecaoFilmes.reloadData()
         }else{
-            listaPopulada = listaComTodosFilmes
+            //listaPopulada = listaComTodosFilmes
+            montaLista()
             self.colecaoFilmes.reloadData()
         }
     }
+    
+    @IBAction func buttonMais(_ sender: UIButton) {
+        montaLista()
+        colecaoFilmes.reloadData()
+    }
+    
+    
 }
 
