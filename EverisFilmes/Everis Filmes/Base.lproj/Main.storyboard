@@ -162,10 +162,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsp-Og-Owa" userLabel="View cabecalho">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdZ-Es-0Td">
-                                                <rect key="frame" x="0.0" y="48" width="375" height="600"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </scrollView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TM-UR-zBW">
                                                 <rect key="frame" x="17" y="9" width="28" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -343,7 +339,6 @@
                         <outlet property="labelGenero" destination="8Di-kf-EDA" id="9NO-L3-X75"/>
                         <outlet property="labelSinopse" destination="ql1-1z-2bl" id="FNe-hn-X8e"/>
                         <outlet property="labelTitulo" destination="9L9-q4-nY7" id="a35-z4-yq7"/>
-                        <outlet property="scrollView" destination="VdZ-Es-0Td" id="05F-7j-Lix"/>
                         <outletCollection property="Collction" destination="N94-Az-fPx" collectionClass="NSMutableArray" id="ljg-6G-AV2"/>
                     </connections>
                 </viewController>
